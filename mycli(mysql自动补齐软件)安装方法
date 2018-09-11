@@ -1,0 +1,12 @@
+mycli(mysql自动补齐软件)安装方法：
+1.先用iptables实现虚拟机连上外网。（注意要设置DNS）
+2.在真机上：yum -y install epel-release             //安装扩展Yum包
+                    yum install python2-pip.noarch      //不要加-y ，出现Is this ok [y/d/N]: 后，选d下载。
+                    scp /var/cache/yum/x86_64/7/epel/packages/python2-pip-8.1.2-6.el7.noarch.rpm 192.168.4.50:/root/ 
+                                                                            //把安装包scp发送到虚拟机里
+3.在虚拟机上: yum -y install python2-pip-8.1.2-6.el7.noarch.rpm   //安装python-pip安装包
+                      easy_install pip                                                           //执行easy_install pip 命令
+                      pip install mycli                                                          //用pip安装mycli
+4.mycli -uroot -p'123qqq...A'                                                          //尽情享用！
+
+ubantu等其他系统安装方式参考：https://github.com/meijxkk/mycli
